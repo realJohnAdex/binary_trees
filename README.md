@@ -1,6 +1,6 @@
 # 0x1D. C - Binary trees
 
-This repository contains solutions and implementations of various binary tree-related problems and algorithms in the C programming language. The code is written as part of the Holberton School curriculum.
+This repository contains solutions and implementations of various binary tree-related problems and algorithms in the C programming language.
 
 ## Table of Contents
 
