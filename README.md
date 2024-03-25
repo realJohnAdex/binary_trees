@@ -28,4 +28,4 @@ Compile the C files using a C compiler of your choice (e.g., gcc): `gcc -Wall -W
 
 ## Authors
 
-This repository is maintained by [John Adeyinka Ajayi](https://github.com/realJohnAdex) and [Collaborator's Name](https://github.com/collaborator-username).
+This repository is maintained by:[John Adeyinka Ajayi](https://github.com/realJohnAdex) and [Onyedikachi Ejim](https://github.com/KachiEjim).
