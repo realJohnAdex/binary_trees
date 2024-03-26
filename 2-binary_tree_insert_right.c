@@ -2,16 +2,16 @@
 
 
 /**
- * binary_tree_insert_left - inserts a node as the left-child of another node
+ * binary_tree_insert_right - inserts a node as the right-child of another node
  *
- * @parent: pointer to the node to insert the left-child in
+ * @parent: pointer to the node to insert the right-child in
  * @value: value to store in the new node
  * Return: pointer to the newly inserted node, or NULL on failure
  *
  */
 
 
-binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
+binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
     binary_tree_t *newNode;
 
@@ -24,16 +24,16 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 
     newNode->n = value;
     newNode->parent = parent;
-    newNode->left = NULL;
     newNode->right = NULL;
+    newNode->left = NULL;
 
-    if (parent->left != NULL)
+    if (parent->right != NULL)
     {
-        newNode->left = parent->left;
-        parent->left->parent = newNode;
+        newNode->right = parent->right;
+        parent->right->parent = newNode;
     }
     
-    parent->left = newNode;
+    parent->right = newNode;
 
     return (newNode);
 }
