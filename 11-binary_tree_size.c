@@ -1,19 +1,18 @@
 #include "binary_trees.h"
 
-
-
 /**
- * binary_tree_size - Goes through a binary tree using post-order traversal
+ * binary_tree_size - Measures the size of a binary tree
  *
- * @tree: A pointer to the root node of the tree to traverse
- * @func: A pointer to a function to call for each node
- *        The value in the node must be passed as a parameter to this function
+ * @tree: A pointer to the root node of the tree to measure the size
  *
- * Description: If tree or func is NULL, do nothing
+ * Return: If tree is NULL, your function must return 0
  *
  */
 
 size_t binary_tree_size(const binary_tree_t *tree)
 {
+    if (tree == NULL)
+        return (0);
 
+    return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
 }
