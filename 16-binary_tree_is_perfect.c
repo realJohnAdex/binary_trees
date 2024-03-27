@@ -3,7 +3,7 @@
 
 
 /**
- * height - Measures the height of a binary tree.
+ * Heightfunc - Measures the height of a binary tree.
  *
  * @tree: A pointer to the root node of the tree to measure the height.
  *
@@ -24,7 +24,7 @@ size_t Heightfunc(const binary_tree_t *tree)
 }
 
 /**
- * size - Measures the size of a binary tree.
+ * SizeFunc - Measures the size of a binary tree.
  *
  * @tree: A pointer to the root node of the tree to measure the size.
  *
