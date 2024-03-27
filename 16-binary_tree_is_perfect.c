@@ -12,15 +12,15 @@
 
 size_t Heightfunc(const binary_tree_t *tree)
 {
-    size_t left_height, right_height;
+	size_t left_height, right_height;
 
-    if (tree == NULL)
-        return (0);
+	if (tree == NULL)
+		return (0);
 
-    left_height = Heightfunc(tree->left);
-    right_height = Heightfunc(tree->right);
+	left_height = Heightfunc(tree->left);
+	right_height = Heightfunc(tree->right);
 
-    return (1 + (left_height > right_height ? left_height : right_height));
+	return (1 + (left_height > right_height ? left_height : right_height));
 }
 
 /**
@@ -34,9 +34,9 @@ size_t Heightfunc(const binary_tree_t *tree)
 
 size_t SizeFunc(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return (0);
-    return (1 + SizeFunc(tree->left) + SizeFunc(tree->right));
+	if (tree == NULL)
+		return (0);
+	return (1 + SizeFunc(tree->left) + SizeFunc(tree->right));
 }
 
 
@@ -53,14 +53,14 @@ size_t SizeFunc(const binary_tree_t *tree)
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-    size_t height, size, perfect_size;
+	size_t height, size, perfect_size;
 
-    if (tree == NULL)
-        return (0);
+	if (tree == NULL)
+		return (0);
 
-    height = Heightfunc(tree);
-    size = SizeFunc(tree);
-    perfect_size = (1 << height) - 1;
+	height = Heightfunc(tree);
+	size = SizeFunc(tree);
+	perfect_size = (1 << height) - 1;
 
-    return (size == perfect_size);
+	return (size == perfect_size);
 }
