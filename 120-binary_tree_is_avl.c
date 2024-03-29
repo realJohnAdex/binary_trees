@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include <stdlib.h>
 
 /**
  * binary_tree_is_avl - checks if a binary tree is a valid AVL tree
@@ -9,25 +8,18 @@
 
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
+    long int height_diff;
+
     if (!tree)
-        return (1); // An empty tree is considered as an AVL tree
+        return (0);
 
-    // Check if the tree is a Binary Search Tree
     if (!binary_tree_is_bst(tree))
-        return (0); // Not a BST, so not an AVL tree
+        return (0);
+    
+    height_diff = binary_tree_height(tree->left) - binary_tree_height(tree->right);
+    if (height_diff > 1 || height_diff < -1)
+        return (0);
 
-    // Calculate the absolute difference in heights
-    long int height_diff = labs((long)(binary_tree_height(tree->left) - binary_tree_height(tree->right)));
-
-    // Check if the tree is balanced (height difference is -1, 0, or 1)
-    if (height_diff > 1)
-        return (0); // Not balanced, so not an AVL tree
-
-    // Recursively check if left and right subtrees are AVL trees
-    if (!binary_tree_is_avl(tree->left) || !binary_tree_is_avl(tree->right))
-        return (0); // Either left or right subtree is not an AVL tree
-
-    // If all conditions are satisfied, the tree is an AVL tree
     return (1);
 }
 
