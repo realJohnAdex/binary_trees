@@ -9,49 +9,44 @@
 
 bst_t *bst_insert(bst_t **tree, int value)
 {
-    bst_t *new_node = NULL, *current = NULL;
+	bst_t *new_node = NULL, *current = NULL;
 
-    if (!tree)
-        return (NULL);
-
-    if (!*tree)
-    {
-        new_node = binary_tree_node(NULL, value);
-        if (!new_node)
-            return (NULL);
-        *tree = new_node;
-        return (new_node);
-    }
-
-    current = *tree;
-    while (current)
-    {
-        if (current->n == value)
-            return (NULL);
-        if (value < current->n)
-        {
-            if (!current->left)
-            {
-                new_node = binary_tree_node(current, value);
-                if (!new_node)
-                    return (NULL);
-                current->left = new_node;
-                return (new_node);
-            }
-            current = current->left;
-        }
-        else
-        {
-            if (!current->right)
-            {
-                new_node = binary_tree_node(current, value);
-                if (!new_node)
-                    return (NULL);
-                current->right = new_node;
-                return (new_node);
-            }
-            current = current->right;
-        }
-    }
-    return (NULL);
+	if (!tree)
+		return (NULL);
+	if (!*tree)
+	{
+		new_node = binary_tree_node(NULL, value);
+		if (!new_node)
+			return (NULL);
+		*tree = new_node;
+		return (new_node);
+	} current = *tree;
+	while (current)
+	{
+		if (current->n == value)
+			return (NULL);
+		if (value < current->n)
+		{
+			if (!current->left)
+			{
+				new_node = binary_tree_node(current, value);
+				if (!new_node)
+					return (NULL);
+				current->left = new_node;
+				return (new_node);
+			} current = current->left;
+		}
+		else
+		{
+			if (!current->right)
+			{
+				new_node = binary_tree_node(current, value);
+				if (!new_node)
+					return (NULL);
+				current->right = new_node;
+				return (new_node);
+			} current = current->right;
+		}
+	}
+	return (NULL);
 }

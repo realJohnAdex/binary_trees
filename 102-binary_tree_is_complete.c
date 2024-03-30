@@ -28,7 +28,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
  * @complete: Pointer to a variable to store completeness status
  *
  */
-void binary_tree_is_complete_helper(const binary_tree_t *tree, size_t size,/
+void binary_tree_is_complete_helper(const binary_tree_t *tree, size_t size,
 												size_t index, size_t *complete)
 {
 	if (tree == NULL)

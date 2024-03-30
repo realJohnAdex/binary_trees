@@ -10,20 +10,20 @@
 
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return (0);
+	if (tree == NULL)
+		return (0);
 
-    if (tree->left != NULL && tree->left->n > tree->n)
-        return (0);
+	if (tree->left != NULL && tree->left->n > tree->n)
+		return (0);
 
-    if (tree->right != NULL && tree->right->n < tree->n)
-        return (0);
+	if (tree->right != NULL && tree->right->n < tree->n)
+		return (0);
 
-    if (tree->left != NULL && binary_tree_is_bst(tree->left))
-        return (0);
+	if (tree->left != NULL && binary_tree_is_bst(tree->left))
+		return (0);
 
-    if (tree->right != NULL && binary_tree_is_bst(tree->right))
-        return (0);
+	if (tree->right != NULL && binary_tree_is_bst(tree->right))
+		return (0);
 
-    return (1);
+	return (1);
 }

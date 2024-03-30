@@ -8,19 +8,20 @@
 
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
-    long int height_diff;
+	long int height_diff;
 
-    if (!tree)
-        return (0);
+	if (!tree)
+		return (0);
 
-    if (!binary_tree_is_bst(tree))
-        return (0);
-    
-    height_diff = binary_tree_height(tree->left) - binary_tree_height(tree->right);
-    if (height_diff > 1 || height_diff < -1)
-        return (0);
+	if (!binary_tree_is_bst(tree))
+		return (0);
 
-    return (1);
+	height_diff = binary_tree_height(tree->left) -
+						binary_tree_height(tree->right);
+	if (height_diff > 1 || height_diff < -1)
+		return (0);
+
+	return (1);
 }
 
 
@@ -34,22 +35,22 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return (0);
+	if (tree == NULL)
+		return (0);
 
-    if (tree->left != NULL && tree->left->n > tree->n)
-        return (0);
+	if (tree->left != NULL && tree->left->n > tree->n)
+		return (0);
 
-    if (tree->right != NULL && tree->right->n < tree->n)
-        return (0);
+	if (tree->right != NULL && tree->right->n < tree->n)
+		return (0);
 
-    if (tree->left != NULL && binary_tree_is_bst(tree->left))
-        return (0);
+	if (tree->left != NULL && binary_tree_is_bst(tree->left))
+		return (0);
 
-    if (tree->right != NULL && binary_tree_is_bst(tree->right))
-        return (0);
+	if (tree->right != NULL && binary_tree_is_bst(tree->right))
+		return (0);
 
-    return (1);
+	return (1);
 }
 
 
