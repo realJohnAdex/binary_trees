@@ -58,14 +58,14 @@ void binary_tree_is_complete_helper(const binary_tree_t *tree, size_t size,
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
 	size_t size, index = 0;
-	int complete = 1;
+	size_t complete = 1;
 
 	if (tree == NULL)
 		return (0);
 
 	size = binary_tree_size(tree);
 
-	binary_tree_is_complete_helper(tree, size, 0, &index, &complete);
+	binary_tree_is_complete_helper(tree, size, index, &complete);
 
 	return (complete);
 }
